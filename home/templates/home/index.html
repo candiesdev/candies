@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'home/css/candiesHome.css' %}"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>candies.dev home</title>
+  </head>
+  <body>
+    <header>
+      <section class="logo">
+        <img src="{% static 'home/img/candiesLogo.png' %}" alt="candies.dev">
+      </section>
+      <section class="navBar">
+        <nav>
+          <ul class="nav">
+            <li><span title="Working on it"><a href="#">Log In</a></span></li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+    <main>
+      <div class="mainContainer">
+        <p>{&nbsp;&quot;juanOroza&quot;&nbsp;:&nbsp;&quot;coding&quot;&nbsp;}</p>
+      </div>
+    </main>
+  </body>
+</html>
