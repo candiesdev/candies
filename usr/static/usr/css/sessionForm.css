@@ -1,0 +1,96 @@
+body {
+    background-color: var(--forms--background);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+#sessionFormContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 400;
+    background-color: var(--forms--background);
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 0rem;
+    margin: 1rem 0rem;
+    border-radius: 0rem;
+}
+
+#userLabel {
+    display: none;
+}
+
+#sessionFormContainer ul, li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    width: 100%;
+}
+
+#sessionFormContainer h3 {
+    text-align: center;
+    font-weight: 400;
+    margin: 1rem 0rem;
+}
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.authForm input, button {
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    height: 4rem;
+    border: 0rem;
+    padding: 0rem 1rem;
+    border-radius: 1.5rem;
+    margin: 1rem 0rem;
+}
+
+#submit {
+    background-color: var(--button--color);
+    cursor: pointer;
+}
+
+#submit:hover {
+    cursor: pointer;
+}
+
+a {
+    padding: 0.5rem 1rem;
+    font-weight: 300;
+    color: var(--links--color);
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+    body {
+        background-color: var(--body--bgcolorS);
+    }
+    #sessionFormContainer {
+        align-items: center;
+        font-weight: 400;
+        background-color: var(--forms--background);
+        width: 35rem;
+        max-width: 35rem;
+        padding: 2rem 0rem;
+        margin: 1rem 0rem;
+        border-radius: 1.5rem;
+    }
+    .authForm input, button {
+        width: 27rem;
+        height: 4rem;
+        border-radius: 2.5rem;
+        margin: 1rem;
+    }
+}

@@ -1,0 +1,74 @@
+{% if sessionTemplate == "userInfo" %}
+<main>
+  <section id="sessionFormContainer">
+    <h3>Información del usuario</h3>
+    <p><b>User ID:&nbsp;</b>{{ userId }}</p>
+    <p><b>User Email:&nbsp;</b>{{ userEmail }}</p>
+    <br>
+    <ul>
+    {% for key, value in sessionMenu.items %}
+      <li><a href="{{ value }}">{{ key }}</a></li>
+    {% endfor %}
+    </ul>
+  </section>
+</main>
+
+{% elif sessionTemplate == "sessionIndex" %}
+<main>
+  <section id="sessionFormContainer">
+    <p>Session Menu</p>
+    <ul>
+    {% for key, value in sessionMenu.items %}
+      <li><a href="{{ value }}">{{ key }}</a></li>
+    {% endfor %}
+    </ul>
+  </section>
+</main>
+
+{% elif sessionTemplate == "userLogin" or sessionTemplate == "userPass" %}
+<main>
+  <section id="sessionFormContainer">
+    <h3>Autenticación</h3>
+    <form class="authForm" action="/usr/" method="post">
+      {% csrf_token %}       
+      {{ sessionForm.as_ul }}
+      <input type="hidden" name="action" value="{{ action }}">
+      <input type="hidden" name="prev" value="{{ prev }}">
+      <label for="submit"></label>
+      <button type="submit" id="submit" name="submit">Autenticar</button>
+    </form>
+    <ul>
+    {% if sessionTemplate == "userPass" %}
+    <li><a href="/usr?action=login&prev={{ prev }}" class="formLinks">Cambiar usuario</a></li>
+    {% endif %}
+    <li><a href="{{ prev }}" class="formLinks">Cancelar</a></li>
+    </ul>
+  </section>
+</main>
+
+{% elif sessionTemplate == "userError" %}
+<main>
+  <section id="sessionFormContainer">
+    <h3>Error de autenticación</h3>
+    {% if alert == "user_error"%}
+    <p>Usuario&nbsp;<b>{{ userId }}</b>&nbsp;inexistente</p>
+    {% endif %}
+    <a href="/usr?action=login&prev={{ prev }}">Reintentar</a>
+  </section>
+</main>
+
+{% elif sessionTemplate == "passwordError" %}
+<main>
+  <section id="sessionFormContainer">
+    <h3>Error de autenticación</h3>
+    {% if alert == "password_error"%}
+    <p>Contraseña inválida</p>
+    {% endif %}
+    <a href="/usr?action=login&prev={{ prev }}">Reintentar</a>
+  </section>
+</main>
+
+{% else %}
+<a href="/home/">Salir de la aplicación</a>
+
+{% endif %}

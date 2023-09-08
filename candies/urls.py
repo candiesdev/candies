@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+app_name = 'candies'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
-    path('home/', include('home.urls'))
+    path('home/', include('home.urls')),
+    path('usr/', include('usr.urls'))
 ]

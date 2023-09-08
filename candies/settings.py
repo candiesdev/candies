@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['192.168.100.145']
 
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
+    'usr.apps.UsrConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

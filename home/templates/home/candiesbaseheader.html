@@ -1,12 +1,14 @@
 {% load static %}
             <header>
                 <section class="logo">
-                    <img src="{% static 'home/img/candiesLogo.png' %}" alt="candies.dev">
+                    <img src="{% static 'home/img/candiesLogo.jpg' %}" alt="candies.dev">
                 </section>
                 <section class="navBar">
                     <nav>
                         <ul class="nav">
-                            <li><span title="Working on it"><a href="#">Log In</a></span></li>
+                            {% if sessionMenuText %}
+                            <li><span title="Autenticar" class="navLink"><a href="{{ sessionMenuLink }}">{{ sessionMenuText }}</a></span></li>
+                            {% endif %}
                         </ul>
                     </nav>
                 </section>

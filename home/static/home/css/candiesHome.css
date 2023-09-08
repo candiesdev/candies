@@ -5,6 +5,9 @@
   --header--bgcolorL: #fab723;
   --footer--bgcolor: #fab723;
   --border--color: #808080;
+  --links--color: #162cf5;
+  --forms--background: #bfb55c;
+  --button--color: #fab723;
 }
 * {
   box-sizing: border-box;
@@ -25,12 +28,10 @@ header {
   height: 5rem;
   background-color: var(--header--bgcolorS);
   padding: 0.5rem;
+  justify-content: space-between;
 }
 header img {
   width: 15rem;
-}
-.nav li {
-  display: none;
 }
 .mainContainer {
   display: flex;
@@ -39,44 +40,38 @@ header img {
   justify-content: center;
 }
 .mainContainer p {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #fa238b;
   font-weight: 400;
 }
+.nav {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.nav a {
+  color: #1664fa;
+  background-color: #f0f0f0;
+  padding: 0.3rem 1rem;
+  border-radius: 1px;
+  text-decoration: none;
+  font-size: 1.4rem;
+  border: 1px solid #1664fa;
+  border-radius: 10px;
+  cursor: pointer;
+}
 @media (min-width: 600px) {
-  header {
-    height: 8rem;
-    padding: 1rem;
-    justify-content: space-between;
-  }
   header img {
     width: 25rem;
   }
-  .nav {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
-  .nav li {
-    display: inline-block;
-  }
-  .nav a {
-    color: #1664fa;
-    background-color: #f0f0f0;
-    padding: 0.3rem 1rem;
-    border-radius: 1px;
-    text-decoration: none;
-    font-size: 1.4rem;
-    border: 1px solid #1664fa;
-    border-radius: 10px;
-  }
-  .nav a:hover {
-    cursor: default;
+  header {
+    height: 8rem;
+    padding: 1rem;
   }
   .mainContainer {
     padding: 10rem 0;
   }
   .mainContainer p {
-    font-weight: 700;
+    font-size: 2.5rem;
   }
 }
